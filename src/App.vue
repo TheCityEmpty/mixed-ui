@@ -1,7 +1,8 @@
 <template>
   <img alt="Vue logo" v-custom-svg="{ class: ['cc'] }" data-hover="#f00" data-src="/src/assets/dong_tai.svg" />
   <p v-custom-svg data-hover="#4395ff" data-src="/src/assets/dong_tai.svg"></p>
-  <button v-debounce.click="[add, debounce2]" :data-fn="add">add</button>
+  <button v-debounce.click="add" data-immdiate="true" data-delay="300">debounce add</button>
+  <button v-throttle.click="add" data-immdiate="true"  data-delay="1000">throttle add</button>
 </template>
 
 <script>
@@ -16,7 +17,6 @@ export default {
 
     function add (e, ife) {
       console.log('ife')
-      
     }
 
     const debounce2 = (fn) => {
